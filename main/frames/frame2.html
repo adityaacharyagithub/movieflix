@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inception</title>
+    <style>
+        /* Apply CSS styles for equal-width divs */
+        .container {
+            display: flex;
+            width: 100%; /* Set the container width to 100% */
+        }
+
+        .equal-div1 {
+            flex: 1; /* Distribute equal width to both divs */
+            border: 1px solid #ccc; /* Optional border for divs */
+            padding: 10px; /* Optional padding for divs */
+        }
+
+        .equal-div2 {
+            flex: 5; /* Distribute equal width to both divs */
+            border: 1px solid #ccc; /* Optional border for divs */
+            padding: 10px; /* Optional padding for divs */
+        }
+
+        /* Define button styles */
+        .but {
+            background-color: #E50914;
+            color: #e1e1e1;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px; /* Adjust width and height by changing padding */
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .but2 {
+            background-color: #24353b;
+            color: #e1e1e1;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px; /* Adjust width and height by changing padding */
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Add hover effect */
+        .but:hover {
+            background-color: #b9343a;
+        }
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body bgcolor="black">
+    <center>
+        <h1 style="font-family:sans-serif;color:aliceblue">Inception</h1>
+    </center>
+    <div class="container">
+        <div class="equal-div1">
+            <img style="width: 100%;height:100%" src="/main/images/movie-2.jpg" alt="">
+        </div>
+        <div class="equal-div2">
+            <center>
+                <video controls width="1000" height="360" id="videoPlayer">
+                    <source src="/main/trailers/2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </center>
+        </div>
+    </div>
+    
+    <center style="padding-top: 4%;">
+        <a href="https://www.netflix.com/in/title/70131314?source=35"><button class="but">Netflix</button></a>
+        <button class="but2">Download</button>
+        <button class="but2" id="playButton">Play/Pause</button>
+    </center>
+
+    <script>
+        // Get references to the video element and play button
+        const video = document.getElementById('videoPlayer');
+        const playButton = document.getElementById('playButton');
+
+        // Add a click event listener to the play button
+        playButton.addEventListener('click', function () {
+            // Check if the video is paused or ended
+            if (video.paused || video.ended) {
+                // Play the video
+                video.play();
+            } else {
+                // Pause the video if it's currently playing
+                video.pause();
+            }
+        });
+    </script>
+</body>
+</html>
